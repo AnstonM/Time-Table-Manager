@@ -29,6 +29,7 @@
         android:layout_width="118dp"
         android:layout_height="114dp"
         android:text="🗓️"
+        android:textColor="#000000"
         android:textSize="70sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
