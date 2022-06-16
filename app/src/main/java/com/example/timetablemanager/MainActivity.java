@@ -7,7 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+import com.example.timetablemanager.databinding.Activity7Binding;
+
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     Button studentBtn,teacherBtn,adminBtn;
 
@@ -15,7 +17,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         studentBtn = (Button) findViewById(R.id.btn1);
         studentBtn.setOnClickListener(this);
 
@@ -45,4 +46,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(it);
         }
     }
+
+
 }
