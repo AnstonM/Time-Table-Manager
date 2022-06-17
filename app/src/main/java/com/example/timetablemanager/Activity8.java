@@ -19,7 +19,7 @@ public class Activity8 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_1);
+        setContentView(R.layout.activity_8);
 
         mon1 = (EditText) findViewById(R.id.Mon1);
         mon2 = (EditText) findViewById(R.id.Mon2);
