@@ -39,7 +39,7 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Activity1"
+            android:name=".Activity8"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity

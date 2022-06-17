@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         if (v.equals(studentBtn))
         {
-            Intent it = new Intent(this, Activity1.class);
+            Intent it = new Intent(this, Activity8.class);
             startActivity(it);
         }
         if (v.equals(teacherBtn))
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         if (v.equals(adminBtn))
         {
-            Intent it = new Intent(this, Activity3.class);
+            Intent it = new Intent(this, Activity8.class);
             startActivity(it);
         }
     }
