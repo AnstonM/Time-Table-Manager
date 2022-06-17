@@ -7,13 +7,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class Activity2 extends AppCompatActivity implements View.OnClickListener {
+public class Activity1 extends AppCompatActivity implements View.OnClickListener{
+
     Button ABtn,BBtn,CBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_2);
+        setContentView(R.layout.activity_1);
 
         ABtn = (Button) findViewById(R.id.btn1);
         ABtn.setOnClickListener(this);
