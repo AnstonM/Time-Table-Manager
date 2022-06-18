@@ -23,13 +23,14 @@ public class Activity8 extends AppCompatActivity {
 
     Button abort,save;
     SQLiteDatabase db;
-    String sec = "CSEB";
+    String sec = "CSEC";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_8);
 
+        //Subjects
         mon1 = (EditText) findViewById(R.id.Mon1);
         mon2 = (EditText) findViewById(R.id.Mon2);
         mon3 = (EditText) findViewById(R.id.Mon3);
@@ -70,6 +71,46 @@ public class Activity8 extends AppCompatActivity {
         fri6 = (EditText) findViewById(R.id.Fri6);
         fri7 = (EditText) findViewById(R.id.Fri7);
 
+        //Teachers
+//        tmon1 = (EditText) findViewById(R.id.TMon1);
+//        tmon2 = (EditText) findViewById(R.id.TMon2);
+//        tmon3 = (EditText) findViewById(R.id.TMon3);
+//        tmon4 = (EditText) findViewById(R.id.TMon4);
+//        tmon5 = (EditText) findViewById(R.id.TMon5);
+//        tmon6 = (EditText) findViewById(R.id.TMon6);
+//        tmon7 = (EditText) findViewById(R.id.TMon7);
+//
+//        ttue1 = (EditText) findViewById(R.id.TTue1);
+//        ttue2 = (EditText) findViewById(R.id.TTue2);
+//        ttue3 = (EditText) findViewById(R.id.TTue3);
+//        ttue4 = (EditText) findViewById(R.id.TTue4);
+//        ttue5 = (EditText) findViewById(R.id.TTue5);
+//        ttue6 = (EditText) findViewById(R.id.TTue6);
+//        ttue7 = (EditText) findViewById(R.id.TTue7);
+//
+//        twed1 = (EditText) findViewById(R.id.TWed1);
+//        twed2 = (EditText) findViewById(R.id.TWed2);
+//        twed3 = (EditText) findViewById(R.id.TWed3);
+//        twed4 = (EditText) findViewById(R.id.TWed4);
+//        twed5 = (EditText) findViewById(R.id.TWed5);
+//        twed6 = (EditText) findViewById(R.id.TWed6);
+//        twed7 = (EditText) findViewById(R.id.TWed7);
+//
+//        tthu1 = (EditText) findViewById(R.id.TThu1);
+//        tthu2 = (EditText) findViewById(R.id.TThu2);
+//        tthu3 = (EditText) findViewById(R.id.TThu3);
+//        tthu4 = (EditText) findViewById(R.id.TThu4);
+//        tthu5 = (EditText) findViewById(R.id.TThu5);
+//        tthu6 = (EditText) findViewById(R.id.TThu6);
+//        tthu7 = (EditText) findViewById(R.id.TThu7);
+//
+//        tfri1 = (EditText) findViewById(R.id.TFri1);
+//        tfri2 = (EditText) findViewById(R.id.TFri2);
+//        tfri3 = (EditText) findViewById(R.id.TFri3);
+//        tfri4 = (EditText) findViewById(R.id.TFri4);
+//        tfri5 = (EditText) findViewById(R.id.TFri5);
+//        tfri6 = (EditText) findViewById(R.id.TFri6);
+//        tfri7 = (EditText) findViewById(R.id.TFri7);
 
         abort = (Button) findViewById(R.id.abortbtn);
         save = (Button) findViewById(R.id.savebtn);
@@ -323,45 +364,45 @@ public class Activity8 extends AppCompatActivity {
 
 
 
-                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','MON1','KKM','" + mon1.getText().toString()+ "');");
-                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','MON2','ANS','" + mon2.getText().toString()+ "');");
-                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','MON3','MDS','" + mon3.getText().toString()+ "');");
-                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','MON4','PRT','" + mon4.getText().toString()+ "');");
-                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','MON5','KKM','" + mon5.getText().toString()+ "');");
-                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','MON6','KKM','" + mon6.getText().toString()+ "');");
-                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','MON7','KKM','" + mon7.getText().toString()+ "');");
+                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','MON1','"+tmon1.getText().toString()+"','"+ mon1.getText().toString()+"');");
+                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','MON2','"+tmon2.getText().toString()+"','"+ mon2.getText().toString()+"');");
+                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','MON3','"+tmon3.getText().toString()+"','"+ mon3.getText().toString()+"');");
+                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','MON4','"+tmon4.getText().toString()+"','"+ mon4.getText().toString()+"');");
+                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','MON5','"+tmon5.getText().toString()+"','"+ mon5.getText().toString()+ "');");
+                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','MON6','"+tmon6.getText().toString()+"','"+ mon6.getText().toString()+ "');");
+                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','MON7','"+tmon7.getText().toString()+"','"+ mon7.getText().toString()+ "');");
 
-                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','TUE1','PRT','" + tue1.getText().toString()+ "');");
-                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','TUE2','MDS','" + tue2.getText().toString()+ "');");
-                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','TUE3','KKM','" + tue3.getText().toString()+ "');");
-                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','TUE4','ANS','" + tue4.getText().toString()+ "');");
-                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','TUE5','ANS','" + tue5.getText().toString()+ "');");
-                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','TUE6','ANS','" + tue6.getText().toString()+ "');");
-                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','TUE7','ANS','" + tue7.getText().toString()+ "');");
+                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','TUE1','"+ttue1.getText().toString()+"','"+ tue1.getText().toString()+ "');");
+                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','TUE2','"+ttue2.getText().toString()+"','"+ tue2.getText().toString()+ "');");
+                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','TUE3','"+ttue3.getText().toString()+"','"+ tue3.getText().toString()+ "');");
+                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','TUE4','"+ttue4.getText().toString()+"','"+ tue4.getText().toString()+ "');");
+                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','TUE5','"+ttue5.getText().toString()+"','"+ tue5.getText().toString()+ "');");
+                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','TUE6','"+ttue6.getText().toString()+"','"+ tue6.getText().toString()+ "');");
+                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','TUE7','"+ttue7.getText().toString()+"','"+ tue7.getText().toString()+ "');");
 
-                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','WED1','RKS','" + wed1.getText().toString()+ "');");
-                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','WED2','ASM','" + wed2.getText().toString()+ "');");
-                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','WED3','ASM','" + wed3.getText().toString()+ "');");
-                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','WED4','ASM','" + wed4.getText().toString()+ "');");
-                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','WED5','MDS','" + wed5.getText().toString()+ "');");
-                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','WED6','MDS','" + wed6.getText().toString()+ "');");
-                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','WED7','','" + wed7.getText().toString()+ "');");
+                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','WED1','"+twed1.getText().toString()+"','"+ wed1.getText().toString()+ "');");
+                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','WED2','"+twed2.getText().toString()+"','"+ wed2.getText().toString()+ "');");
+                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','WED3','"+twed3.getText().toString()+"','"+ wed3.getText().toString()+ "');");
+                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','WED4','"+twed4.getText().toString()+"','"+ wed4.getText().toString()+ "');");
+                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','WED5','"+twed5.getText().toString()+"','"+ wed5.getText().toString()+ "');");
+                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','WED6','"+twed6.getText().toString()+"','"+ wed6.getText().toString()+ "');");
+                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','WED7','"+twed7.getText().toString()+"','"+ wed7.getText().toString()+ "');");
 
-                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','THU1','PRT','" + thu1.getText().toString()+ "');");
-                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','THU2','ANS','" + thu2.getText().toString()+ "');");
-                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','THU3','KKM','" + thu3.getText().toString()+ "');");
-                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','THU4','','" + thu4.getText().toString()+ "');");
-                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','THU5','','" + thu5.getText().toString()+ "');");
-                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','THU6','','" + thu6.getText().toString()+ "');");
-                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','THU7','','" + thu7.getText().toString()+ "');");
+                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','THU1','"+tthu1.getText().toString()+"','"+ thu1.getText().toString()+ "');");
+                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','THU2','"+tthu2.getText().toString()+"','"+ thu2.getText().toString()+ "');");
+                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','THU3','"+tthu3.getText().toString()+"','"+ thu3.getText().toString()+ "');");
+                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','THU4','"+tthu4.getText().toString()+"','"+ thu4.getText().toString()+ "');");
+                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','THU5','"+tthu5.getText().toString()+"','"+ thu5.getText().toString()+ "');");
+                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','THU6','"+tthu6.getText().toString()+"','"+ thu6.getText().toString()+ "');");
+                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','THU7','"+tthu7.getText().toString()+"','"+ thu7.getText().toString()+ "');");
 
-                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','FRI1','RKS','" + fri1.getText().toString()+ "');");
-                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','FRI2','KKM','" + fri2.getText().toString()+ "');");
-                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','FRI3','ANS','" + fri3.getText().toString()+ "');");
-                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','FRI4','MDS','" + fri4.getText().toString()+ "');");
-                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','FRI5','','" + fri5.getText().toString()+ "');");
-                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','FRI6','','" + fri6.getText().toString()+ "');");
-                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','FRI7','','" + fri7.getText().toString()+ "');");
+                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','FRI1','"+tfri1.getText().toString()+"','"+ fri1.getText().toString()+ "');");
+                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','FRI2','"+tfri2.getText().toString()+"','"+ fri2.getText().toString()+ "');");
+                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','FRI3','"+tfri3.getText().toString()+"','"+ fri3.getText().toString()+ "');");
+                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','FRI4','"+tfri4.getText().toString()+"','"+ fri4.getText().toString()+ "');");
+                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','FRI5','"+tfri5.getText().toString()+"','"+ fri5.getText().toString()+ "');");
+                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','FRI6','"+tfri6.getText().toString()+"','"+ fri6.getText().toString()+ "');");
+                db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','FRI7','"+tfri7.getText().toString()+"','"+ fri7.getText().toString()+ "');");
 
 
 
