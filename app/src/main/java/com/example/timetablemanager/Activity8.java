@@ -3,8 +3,10 @@ package com.example.timetablemanager;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -13,9 +15,15 @@ import android.widget.Toast;
 public class Activity8 extends AppCompatActivity {
     EditText mon1,mon2,mon3,mon4,mon5,mon6,mon7,tue1,tue2,tue3,tue4,tue5,tue6,tue7;
     EditText wed1,wed2,wed3,wed4,wed5,wed6,wed7,thu1,thu2,thu3,thu4,thu5,thu6,thu7;
-    EditText fri1,fri2,fri3,fri4,fri5,fri6,fri7,sat1,sat2,sat3,sat4,sat5,sat6,sat7;
+    EditText fri1,fri2,fri3,fri4,fri5,fri6,fri7;
+
+    EditText tmon1,tmon2,tmon3,tmon4,tmon5,tmon6,tmon7,ttue1,ttue2,ttue3,ttue4,ttue5,ttue6,ttue7;
+    EditText twed1,twed2,twed3,twed4,twed5,twed6,twed7,tthu1,tthu2,tthu3,tthu4,tthu5,tthu6,tthu7;
+    EditText tfri1,tfri2,tfri3,tfri4,tfri5,tfri6,tfri7;
+
     Button abort,save;
     SQLiteDatabase db;
+    String sec = "CSEB";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,11 +83,246 @@ public class Activity8 extends AppCompatActivity {
 
 
 
+    //viewing db values in tt
+        Cursor c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='MON1';", null) ;
+        if(c.moveToFirst())
+        {
+            mon1.setText(c.getString(3));
+//                    tmon1.setText(c.getString(2));
+        }
+
+
+        c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='MON2';", null) ;
+        if(c.moveToFirst())
+        {
+            mon2.setText(c.getString(3));
+//                    tmon2.setText(c.getString(2));
+        }
+
+        c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='MON3';", null) ;
+        if(c.moveToFirst())
+        {
+            mon3.setText(c.getString(3));
+//                    tmon3.setText(c.getString(2));
+        }
+        c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='MON4';", null) ;
+        if(c.moveToFirst())
+        {
+            mon4.setText(c.getString(3));
+//                    tmon4.setText(c.getString(2));
+        }
+        c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='MON5';", null) ;
+        if(c.moveToFirst())
+        {
+            mon5.setText(c.getString(3));
+//                    tmon5.setText(c.getString(2));
+        }
+        c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='MON6';", null) ;
+        if(c.moveToFirst())
+        {
+            mon6.setText(c.getString(3));
+//                    tmon6.setText(c.getString(2));
+        }
+        c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='MON7';", null) ;
+        if(c.moveToFirst())
+        {
+            mon7.setText(c.getString(3));
+//                    tmon7.setText(c.getString(2));
+        }
+
+        //Tuesday
+
+        c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='TUE1';", null) ;
+        if(c.moveToFirst())
+        {
+            tue1.setText(c.getString(3));
+//                    ttue1.setText(c.getString(2));
+        }
+        c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='TUE2';", null) ;
+        if(c.moveToFirst())
+        {
+            tue2.setText(c.getString(3));
+//                    ttue2.setText(c.getString(2));
+        }
+        c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='TUE3';", null) ;
+        if(c.moveToFirst())
+        {
+            tue3.setText(c.getString(3));
+//                    ttue3.setText(c.getString(2));
+        }
+        c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='TUE4';", null) ;
+        if(c.moveToFirst())
+        {
+            tue4.setText(c.getString(3));
+//                    ttue4.setText(c.getString(2));
+        }
+        c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='TUE5';", null) ;
+        if(c.moveToFirst())
+        {
+            tue5.setText(c.getString(3));
+//                    ttue5.setText(c.getString(2));
+        }
+        c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='TUE6';", null) ;
+        if(c.moveToFirst())
+        {
+            tue6.setText(c.getString(3));
+//                    ttue6.setText(c.getString(2));
+        }
+        c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='TUE7';", null) ;
+        if(c.moveToFirst())
+        {
+            tue7.setText(c.getString(3));
+//                    ttue7.setText(c.getString(2));
+        }
+
+        //Wednesday
+
+        c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='WED1';", null) ;
+        if(c.moveToFirst())
+        {
+            wed1.setText(c.getString(3));
+//                    twed1.setText(c.getString(2));
+        }
+        c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='WED2';", null) ;
+        if(c.moveToFirst())
+        {
+            wed2.setText(c.getString(3));
+//                    twed2.setText(c.getString(2));
+        }
+        c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='WED3';", null) ;
+        if(c.moveToFirst())
+        {
+            wed3.setText(c.getString(3));
+//                    twed3.setText(c.getString(2));
+        }c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='WED4';", null) ;
+        if(c.moveToFirst())
+        {
+            wed4.setText(c.getString(3));
+//                    twed4.setText(c.getString(2));
+        }
+        c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='WED5';", null) ;
+        if(c.moveToFirst())
+        {
+            wed5.setText(c.getString(3));
+//                    twed5.setText(c.getString(2));
+        }
+        c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='WED6';", null) ;
+        if(c.moveToFirst())
+        {
+            wed6.setText(c.getString(3));
+//                    twed6.setText(c.getString(2));
+        }
+        c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='WED7';", null) ;
+        if(c.moveToFirst())
+        {
+            wed7.setText(c.getString(3));
+//                    twed7.setText(c.getString(2));
+        }
+
+        //Thursday
+
+
+        c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='THU1';", null) ;
+        if(c.moveToFirst())
+        {
+            thu1.setText(c.getString(3));
+//                    tthu1.setText(c.getString(2));
+        }
+        c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='THU2';", null) ;
+        if(c.moveToFirst())
+        {
+            thu2.setText(c.getString(3));
+//                    tthu2.setText(c.getString(2));
+        }
+        c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='THU3';", null) ;
+        if(c.moveToFirst())
+        {
+            thu3.setText(c.getString(3));
+//                    tthu3.setText(c.getString(2));
+        }
+        c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='THU4';", null) ;
+        if(c.moveToFirst())
+        {
+            thu4.setText(c.getString(3));
+//                    tthu4.setText(c.getString(2));
+        }
+        c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='THU5';", null) ;
+        if(c.moveToFirst())
+        {
+            thu5.setText(c.getString(3));
+//                    tthu5.setText(c.getString(2));
+        }
+        c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='THU6';", null) ;
+        if(c.moveToFirst())
+        {
+            thu6.setText(c.getString(3));
+//                    tthu6.setText(c.getString(2));
+        }
+        c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='THU7';", null) ;
+        if(c.moveToFirst())
+        {
+            thu7.setText(c.getString(3));
+//                    tthu7.setText(c.getString(2));
+        }
+
+        //Friday
+
+        c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='FRI1';", null) ;
+        if(c.moveToFirst())
+        {
+            fri1.setText(c.getString(3));
+//                    tfri1.setText(c.getString(2));
+        }c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='FRI2';", null) ;
+        if(c.moveToFirst())
+        {
+            fri2.setText(c.getString(3));
+//                    tfri2.setText(c.getString(2));
+        }
+        c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='FRI3';", null) ;
+        if(c.moveToFirst())
+        {
+            fri3.setText(c.getString(3));
+//                    tfri3.setText(c.getString(2));
+        }
+        c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='FRI4';", null) ;
+        if(c.moveToFirst())
+        {
+            fri4.setText(c.getString(3));
+//                    tfri4.setText(c.getString(2));
+        }
+        c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='FRI5';", null) ;
+        if(c.moveToFirst())
+        {
+            fri5.setText(c.getString(3));
+//                    tfri5.setText(c.getString(2));
+        }
+        c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='FRI6';", null) ;
+        if(c.moveToFirst())
+        {
+            fri6.setText(c.getString(3));
+//                    tfri6.setText(c.getString(2));
+        }
+        c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='FRI7';", null) ;
+        if(c.moveToFirst())
+        {
+            fri7.setText(c.getString(3));
+//                    tfri7.setText(c.getString(2));
+        }
+
+
+
+
+
 //        Bundle bundle = getIntent().getBundleExtra("sect");
 //        String section = bundle.getString("sec");
-        String sec = "CSEA";
+
         try{
-            save.setOnClickListener(v -> {
+
+            abort.setOnClickListener(v -> {
+                db.execSQL("DELETE FROM TimeT WHERE Section='"+sec+"'");
+
+
+
                 db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','MON1','KKM','" + mon1.getText().toString()+ "');");
                 db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','MON2','ANS','" + mon2.getText().toString()+ "');");
                 db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','MON3','MDS','" + mon3.getText().toString()+ "');");
@@ -121,9 +364,12 @@ public class Activity8 extends AppCompatActivity {
                 db.execSQL("INSERT INTO TimeT VALUES('"+sec+"','FRI7','','" + fri7.getText().toString()+ "');");
 
 
+
+
                 Toast.makeText(getBaseContext(), "Time-Table Successfully Updated", Toast.LENGTH_LONG).show();
             });
         }catch (Exception e){
+            System.out.println(e);
             Toast.makeText(getBaseContext(), "Error Updating Time-Table", Toast.LENGTH_LONG).show();
         }
 
