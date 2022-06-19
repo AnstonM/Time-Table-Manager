@@ -16,6 +16,8 @@ public class Activity1 extends AppCompatActivity implements View.OnClickListener
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_1);
 
+
+
         ABtn = (Button) findViewById(R.id.btn1);
         ABtn.setOnClickListener(this);
 
@@ -26,6 +28,8 @@ public class Activity1 extends AppCompatActivity implements View.OnClickListener
         CBtn.setOnClickListener(this);
 
     }
+
+
 
     @Override
     public void onClick(View v) {

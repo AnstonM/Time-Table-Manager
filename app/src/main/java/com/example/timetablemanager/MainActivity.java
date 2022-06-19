@@ -4,16 +4,19 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Switch;
 import android.widget.TextView;
 
-import com.example.timetablemanager.databinding.Activity7Binding;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     Button studentBtn,teacherBtn,adminBtn;
     TextView x;
+    TextToSpeech textToSpeech;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,26 +32,34 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         adminBtn.setOnClickListener(this);
 
 
+
+
+
+
     }
 
     @Override
     public void onClick(View v) {
+        Intent it;
         if (v.equals(studentBtn))
         {
-            Intent it = new Intent(this, Activity1.class);
+            it = new Intent(this, Activity1.class);
             startActivity(it);
+
         }
         if (v.equals(teacherBtn))
         {
-            Intent it = new Intent(this, Activity2.class);
+           it = new Intent(this, Activity2.class);
             startActivity(it);
         }
         if (v.equals(adminBtn))
         {
-            Intent it = new Intent(this, Activity8.class);
+            it = new Intent(this, Activity3.class);
             startActivity(it);
         }
     }
+
+
 
 
 }
