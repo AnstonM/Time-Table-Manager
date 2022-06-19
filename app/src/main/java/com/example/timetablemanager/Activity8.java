@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 //gg
@@ -21,14 +22,34 @@ public class Activity8 extends AppCompatActivity {
     EditText twed1,twed2,twed3,twed4,twed5,twed6,twed7,tthu1,tthu2,tthu3,tthu4,tthu5,tthu6,tthu7;
     EditText tfri1,tfri2,tfri3,tfri4,tfri5,tfri6,tfri7;
 
+    TextView cT;
+
     Button abort,save;
     SQLiteDatabase db;
-    String sec = "CSEC";
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_8);
+
+        Bundle bundle = getIntent().getBundleExtra("data");
+        String sec = bundle.getString("section");
+
+        cT = (TextView)findViewById(R.id.classText) ;
+
+        if(sec.equals("CSEA")) {
+            cT.setText("CSE VI A");
+        }
+        else if(sec.equals("CSEB")){
+            cT.setText("CSE VI B");
+        }
+        else if(sec.equals("CSEC")){
+            cT.setText("CSE VI C");
+        }
 
         //Subjects
         mon1 = (EditText) findViewById(R.id.Mon1);
@@ -72,45 +93,45 @@ public class Activity8 extends AppCompatActivity {
         fri7 = (EditText) findViewById(R.id.Fri7);
 
         //Teachers
-//        tmon1 = (EditText) findViewById(R.id.TMon1);
-//        tmon2 = (EditText) findViewById(R.id.TMon2);
-//        tmon3 = (EditText) findViewById(R.id.TMon3);
-//        tmon4 = (EditText) findViewById(R.id.TMon4);
-//        tmon5 = (EditText) findViewById(R.id.TMon5);
-//        tmon6 = (EditText) findViewById(R.id.TMon6);
-//        tmon7 = (EditText) findViewById(R.id.TMon7);
-//
-//        ttue1 = (EditText) findViewById(R.id.TTue1);
-//        ttue2 = (EditText) findViewById(R.id.TTue2);
-//        ttue3 = (EditText) findViewById(R.id.TTue3);
-//        ttue4 = (EditText) findViewById(R.id.TTue4);
-//        ttue5 = (EditText) findViewById(R.id.TTue5);
-//        ttue6 = (EditText) findViewById(R.id.TTue6);
-//        ttue7 = (EditText) findViewById(R.id.TTue7);
-//
-//        twed1 = (EditText) findViewById(R.id.TWed1);
-//        twed2 = (EditText) findViewById(R.id.TWed2);
-//        twed3 = (EditText) findViewById(R.id.TWed3);
-//        twed4 = (EditText) findViewById(R.id.TWed4);
-//        twed5 = (EditText) findViewById(R.id.TWed5);
-//        twed6 = (EditText) findViewById(R.id.TWed6);
-//        twed7 = (EditText) findViewById(R.id.TWed7);
-//
-//        tthu1 = (EditText) findViewById(R.id.TThu1);
-//        tthu2 = (EditText) findViewById(R.id.TThu2);
-//        tthu3 = (EditText) findViewById(R.id.TThu3);
-//        tthu4 = (EditText) findViewById(R.id.TThu4);
-//        tthu5 = (EditText) findViewById(R.id.TThu5);
-//        tthu6 = (EditText) findViewById(R.id.TThu6);
-//        tthu7 = (EditText) findViewById(R.id.TThu7);
-//
-//        tfri1 = (EditText) findViewById(R.id.TFri1);
-//        tfri2 = (EditText) findViewById(R.id.TFri2);
-//        tfri3 = (EditText) findViewById(R.id.TFri3);
-//        tfri4 = (EditText) findViewById(R.id.TFri4);
-//        tfri5 = (EditText) findViewById(R.id.TFri5);
-//        tfri6 = (EditText) findViewById(R.id.TFri6);
-//        tfri7 = (EditText) findViewById(R.id.TFri7);
+        tmon1 = (EditText) findViewById(R.id.TMon1);
+        tmon2 = (EditText) findViewById(R.id.TMon2);
+        tmon3 = (EditText) findViewById(R.id.TMon3);
+        tmon4 = (EditText) findViewById(R.id.TMon4);
+        tmon5 = (EditText) findViewById(R.id.TMon5);
+        tmon6 = (EditText) findViewById(R.id.TMon6);
+        tmon7 = (EditText) findViewById(R.id.TMon7);
+
+        ttue1 = (EditText) findViewById(R.id.TTue1);
+        ttue2 = (EditText) findViewById(R.id.TTue2);
+        ttue3 = (EditText) findViewById(R.id.TTue3);
+        ttue4 = (EditText) findViewById(R.id.TTue4);
+        ttue5 = (EditText) findViewById(R.id.TTue5);
+        ttue6 = (EditText) findViewById(R.id.TTue6);
+        ttue7 = (EditText) findViewById(R.id.TTue7);
+
+        twed1 = (EditText) findViewById(R.id.TWed1);
+        twed2 = (EditText) findViewById(R.id.TWed2);
+        twed3 = (EditText) findViewById(R.id.TWed3);
+        twed4 = (EditText) findViewById(R.id.TWed4);
+        twed5 = (EditText) findViewById(R.id.TWed5);
+        twed6 = (EditText) findViewById(R.id.TWed6);
+        twed7 = (EditText) findViewById(R.id.TWed7);
+
+        tthu1 = (EditText) findViewById(R.id.TThu1);
+        tthu2 = (EditText) findViewById(R.id.TThu2);
+        tthu3 = (EditText) findViewById(R.id.TThu3);
+        tthu4 = (EditText) findViewById(R.id.TThu4);
+        tthu5 = (EditText) findViewById(R.id.TThu5);
+        tthu6 = (EditText) findViewById(R.id.TThu6);
+        tthu7 = (EditText) findViewById(R.id.TThu7);
+
+        tfri1 = (EditText) findViewById(R.id.TFri1);
+        tfri2 = (EditText) findViewById(R.id.TFri2);
+        tfri3 = (EditText) findViewById(R.id.TFri3);
+        tfri4 = (EditText) findViewById(R.id.TFri4);
+        tfri5 = (EditText) findViewById(R.id.TFri5);
+        tfri6 = (EditText) findViewById(R.id.TFri6);
+        tfri7 = (EditText) findViewById(R.id.TFri7);
 
         abort = (Button) findViewById(R.id.abortbtn);
         save = (Button) findViewById(R.id.savebtn);
@@ -129,7 +150,7 @@ public class Activity8 extends AppCompatActivity {
         if(c.moveToFirst())
         {
             mon1.setText(c.getString(3));
-//                    tmon1.setText(c.getString(2));
+            tmon1.setText(c.getString(2));
         }
 
 
@@ -137,38 +158,38 @@ public class Activity8 extends AppCompatActivity {
         if(c.moveToFirst())
         {
             mon2.setText(c.getString(3));
-//                    tmon2.setText(c.getString(2));
+            tmon2.setText(c.getString(2));
         }
 
         c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='MON3';", null) ;
         if(c.moveToFirst())
         {
             mon3.setText(c.getString(3));
-//                    tmon3.setText(c.getString(2));
+            tmon3.setText(c.getString(2));
         }
         c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='MON4';", null) ;
         if(c.moveToFirst())
         {
             mon4.setText(c.getString(3));
-//                    tmon4.setText(c.getString(2));
+            tmon4.setText(c.getString(2));
         }
         c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='MON5';", null) ;
         if(c.moveToFirst())
         {
             mon5.setText(c.getString(3));
-//                    tmon5.setText(c.getString(2));
+            tmon5.setText(c.getString(2));
         }
         c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='MON6';", null) ;
         if(c.moveToFirst())
         {
             mon6.setText(c.getString(3));
-//                    tmon6.setText(c.getString(2));
+            tmon6.setText(c.getString(2));
         }
         c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='MON7';", null) ;
         if(c.moveToFirst())
         {
             mon7.setText(c.getString(3));
-//                    tmon7.setText(c.getString(2));
+            tmon7.setText(c.getString(2));
         }
 
         //Tuesday
@@ -177,43 +198,43 @@ public class Activity8 extends AppCompatActivity {
         if(c.moveToFirst())
         {
             tue1.setText(c.getString(3));
-//                    ttue1.setText(c.getString(2));
+            ttue1.setText(c.getString(2));
         }
         c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='TUE2';", null) ;
         if(c.moveToFirst())
         {
             tue2.setText(c.getString(3));
-//                    ttue2.setText(c.getString(2));
+            ttue2.setText(c.getString(2));
         }
         c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='TUE3';", null) ;
         if(c.moveToFirst())
         {
             tue3.setText(c.getString(3));
-//                    ttue3.setText(c.getString(2));
+            ttue3.setText(c.getString(2));
         }
         c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='TUE4';", null) ;
         if(c.moveToFirst())
         {
             tue4.setText(c.getString(3));
-//                    ttue4.setText(c.getString(2));
+            ttue4.setText(c.getString(2));
         }
         c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='TUE5';", null) ;
         if(c.moveToFirst())
         {
             tue5.setText(c.getString(3));
-//                    ttue5.setText(c.getString(2));
+            ttue5.setText(c.getString(2));
         }
         c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='TUE6';", null) ;
         if(c.moveToFirst())
         {
             tue6.setText(c.getString(3));
-//                    ttue6.setText(c.getString(2));
+            ttue6.setText(c.getString(2));
         }
         c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='TUE7';", null) ;
         if(c.moveToFirst())
         {
             tue7.setText(c.getString(3));
-//                    ttue7.setText(c.getString(2));
+            ttue7.setText(c.getString(2));
         }
 
         //Wednesday
@@ -222,42 +243,42 @@ public class Activity8 extends AppCompatActivity {
         if(c.moveToFirst())
         {
             wed1.setText(c.getString(3));
-//                    twed1.setText(c.getString(2));
+                    twed1.setText(c.getString(2));
         }
         c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='WED2';", null) ;
         if(c.moveToFirst())
         {
             wed2.setText(c.getString(3));
-//                    twed2.setText(c.getString(2));
+                    twed2.setText(c.getString(2));
         }
         c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='WED3';", null) ;
         if(c.moveToFirst())
         {
             wed3.setText(c.getString(3));
-//                    twed3.setText(c.getString(2));
+                    twed3.setText(c.getString(2));
         }c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='WED4';", null) ;
         if(c.moveToFirst())
         {
             wed4.setText(c.getString(3));
-//                    twed4.setText(c.getString(2));
+                    twed4.setText(c.getString(2));
         }
         c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='WED5';", null) ;
         if(c.moveToFirst())
         {
             wed5.setText(c.getString(3));
-//                    twed5.setText(c.getString(2));
+                    twed5.setText(c.getString(2));
         }
         c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='WED6';", null) ;
         if(c.moveToFirst())
         {
             wed6.setText(c.getString(3));
-//                    twed6.setText(c.getString(2));
+                    twed6.setText(c.getString(2));
         }
         c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='WED7';", null) ;
         if(c.moveToFirst())
         {
             wed7.setText(c.getString(3));
-//                    twed7.setText(c.getString(2));
+                    twed7.setText(c.getString(2));
         }
 
         //Thursday
@@ -267,43 +288,43 @@ public class Activity8 extends AppCompatActivity {
         if(c.moveToFirst())
         {
             thu1.setText(c.getString(3));
-//                    tthu1.setText(c.getString(2));
+                    tthu1.setText(c.getString(2));
         }
         c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='THU2';", null) ;
         if(c.moveToFirst())
         {
             thu2.setText(c.getString(3));
-//                    tthu2.setText(c.getString(2));
+                    tthu2.setText(c.getString(2));
         }
         c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='THU3';", null) ;
         if(c.moveToFirst())
         {
             thu3.setText(c.getString(3));
-//                    tthu3.setText(c.getString(2));
+                    tthu3.setText(c.getString(2));
         }
         c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='THU4';", null) ;
         if(c.moveToFirst())
         {
             thu4.setText(c.getString(3));
-//                    tthu4.setText(c.getString(2));
+                    tthu4.setText(c.getString(2));
         }
         c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='THU5';", null) ;
         if(c.moveToFirst())
         {
             thu5.setText(c.getString(3));
-//                    tthu5.setText(c.getString(2));
+                    tthu5.setText(c.getString(2));
         }
         c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='THU6';", null) ;
         if(c.moveToFirst())
         {
             thu6.setText(c.getString(3));
-//                    tthu6.setText(c.getString(2));
+                    tthu6.setText(c.getString(2));
         }
         c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='THU7';", null) ;
         if(c.moveToFirst())
         {
             thu7.setText(c.getString(3));
-//                    tthu7.setText(c.getString(2));
+                    tthu7.setText(c.getString(2));
         }
 
         //Friday
@@ -312,54 +333,52 @@ public class Activity8 extends AppCompatActivity {
         if(c.moveToFirst())
         {
             fri1.setText(c.getString(3));
-//                    tfri1.setText(c.getString(2));
+                    tfri1.setText(c.getString(2));
         }c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='FRI2';", null) ;
         if(c.moveToFirst())
         {
             fri2.setText(c.getString(3));
-//                    tfri2.setText(c.getString(2));
+                    tfri2.setText(c.getString(2));
         }
         c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='FRI3';", null) ;
         if(c.moveToFirst())
         {
             fri3.setText(c.getString(3));
-//                    tfri3.setText(c.getString(2));
+                    tfri3.setText(c.getString(2));
         }
         c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='FRI4';", null) ;
         if(c.moveToFirst())
         {
             fri4.setText(c.getString(3));
-//                    tfri4.setText(c.getString(2));
+                    tfri4.setText(c.getString(2));
         }
         c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='FRI5';", null) ;
         if(c.moveToFirst())
         {
             fri5.setText(c.getString(3));
-//                    tfri5.setText(c.getString(2));
+                    tfri5.setText(c.getString(2));
         }
         c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='FRI6';", null) ;
         if(c.moveToFirst())
         {
             fri6.setText(c.getString(3));
-//                    tfri6.setText(c.getString(2));
+                    tfri6.setText(c.getString(2));
         }
         c=db.rawQuery("SELECT * FROM TimeT WHERE Section='"+sec+"' AND Day='FRI7';", null) ;
         if(c.moveToFirst())
         {
             fri7.setText(c.getString(3));
-//                    tfri7.setText(c.getString(2));
+                    tfri7.setText(c.getString(2));
         }
 
 
 
 
 
-//        Bundle bundle = getIntent().getBundleExtra("sect");
-//        String section = bundle.getString("sec");
 
         try{
 
-            abort.setOnClickListener(v -> {
+            save.setOnClickListener(v -> {
                 db.execSQL("DELETE FROM TimeT WHERE Section='"+sec+"'");
 
 
