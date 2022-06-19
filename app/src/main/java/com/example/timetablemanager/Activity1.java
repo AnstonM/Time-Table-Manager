@@ -31,17 +31,26 @@ public class Activity1 extends AppCompatActivity implements View.OnClickListener
     public void onClick(View v) {
         if (v.equals(ABtn))
         {
-            Intent it = new Intent(this, Activity8.class);
+            Intent it = new Intent(this, Activity6.class);
+            Bundle bundle = new Bundle();
+            bundle.putString("section","CSEA");
+            it.putExtra("data",bundle);
             startActivity(it);
         }
         if (v.equals(BBtn))
         {
-            Intent it = new Intent(this, Activity8.class);
+            Intent it = new Intent(this, Activity6.class);
+            Bundle bundle = new Bundle();
+            bundle.putString("section","CSEB");
+            it.putExtra("data",bundle);
             startActivity(it);
         }
         if (v.equals(CBtn))
         {
-            Intent it = new Intent(this, Activity8.class);
+            Intent it = new Intent(this, Activity6.class);
+            Bundle bundle = new Bundle();
+            bundle.putString("section","CSEC");
+            it.putExtra("data",bundle);
             startActivity(it);
         }
     }
