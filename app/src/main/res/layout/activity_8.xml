@@ -1608,26 +1608,13 @@
 
     <Button
         android:id="@+id/savebtn"
-        android:layout_width="191dp"
-        android:layout_height="61dp"
+        android:layout_width="371dp"
+        android:layout_height="44dp"
+        android:layout_marginBottom="8dp"
         android:backgroundTint="#F47D57"
         android:text="Save"
         app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.996"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView3"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <Button
-        android:id="@+id/abortbtn"
-        android:layout_width="191dp"
-        android:layout_height="61dp"
-        android:backgroundTint="#F47D57"
-        android:text="Abort"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
-        app:layout_constraintEnd_toStartOf="@+id/savebtn"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView3"
         app:layout_constraintVertical_bias="1.0" />

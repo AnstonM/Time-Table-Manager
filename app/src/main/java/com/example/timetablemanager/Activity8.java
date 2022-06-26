@@ -24,7 +24,7 @@ public class Activity8 extends AppCompatActivity {
 
     TextView cT;
 
-    Button abort,save;
+    Button save;
     SQLiteDatabase db;
 
 
@@ -133,7 +133,6 @@ public class Activity8 extends AppCompatActivity {
         tfri6 = (EditText) findViewById(R.id.TFri6);
         tfri7 = (EditText) findViewById(R.id.TFri7);
 
-        abort = (Button) findViewById(R.id.abortbtn);
         save = (Button) findViewById(R.id.savebtn);
 
         db = openOrCreateDatabase("TimeT", Context.MODE_PRIVATE,null);
